@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <h2>Lista de Clientes</h2>
+    <h2>Tipos De Producto</h2>
     <table>
         <thead>
             <tr>
@@ -19,16 +19,12 @@
             </tr>
         </thead>
         <tbody>
-            {% for cliente in clientes %}
+            {% for dato in tipo_producto %}
             <tr>
-                <td>{{ cliente.id_cliente }}</td>
-                <td>{{ cliente.nombre_cliente }}</td>
-                <td>{{ cliente.edad_cliente }}</td>
-                <td>{{ cliente.score_cliente }}</td>
-                <td>{{ cliente.pais_cliente }}</td>
-                <td>{{ cliente.tipo_persona }}</td>
-                <td>{{ cliente.correoelectronico_cliente }}</td>
-                <td>{{ cliente.telefono }}</td>
+                <td>{{ dato.id_tipo_producto }}</td>
+                <td>{{ dato.nombre_tipo }}</td>
+                <td>{{ dato.descripcion }}</td>
+                <td>{{ dato.tasa_interes }}</td>
             </tr>
             {% endfor %}
         </tbody>

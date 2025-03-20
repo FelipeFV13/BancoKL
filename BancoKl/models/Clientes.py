@@ -2,7 +2,7 @@ from BancoKl import db
 
 
 class Cliente(db.Model):
-    __tablename__ = 'Cliente'
+    __tablename__ = 'cliente'
 
     id_cliente = db.Column(db.Integer, primary_key=True)
     nombre_cliente = db.Column(db.String(50))

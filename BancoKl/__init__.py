@@ -16,9 +16,17 @@ with app.app_context():
 #importar modelo clientes
 
 from BancoKl.models.Clientes import Cliente
+from BancoKl.models.TipoProducto import TipoProducto
 
 
 @app.route('/Clientes')
 def mostrar_clientes():
-    clientes = Cliente.query.all()  # Obtener los 50 registros
-    return render_template('MostrarTabla.html', clientes=clientes)
+    columnas = [column.name for column in Cliente.__table__.columns]
+    clientes = Cliente.query.all()
+    return render_template('MostrarTabla.html', clientes=clientes, columnas =columnas)
+
+@app.route('/Tipo_producto')
+def mostrar_tipo_producto():
+    columnas = [column.name for column in TipoProducto.__table__.columns]
+    tipo_producto = TipoProducto.query.all()
+    return render_template('MostrarTabla2.html', tipo_producto=tipo_producto, columnas =columnas)
